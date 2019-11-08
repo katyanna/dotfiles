@@ -16,14 +16,6 @@ else
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 fi
 
-if [ -s ~/.config/nvim/autoload/plug.vim ]; then
-  echo "VimPlug already installed for NeoVim"
-else
-  curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-
 vim +PlugInstall +qall
 
 git clone git@github.com:powerline/fonts.git ~/fonts
