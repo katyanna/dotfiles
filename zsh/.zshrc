@@ -16,3 +16,5 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 
 zplug load
+
+export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
