@@ -2,7 +2,7 @@ let base16colorspace=256
 set background=dark
 hi IndentGuidesOdd  ctermbg=black
 hi IndentGuidesEven ctermbg=darkgrey
-colorscheme arcadia
+colorscheme nord
 
 "define font"
 "set guifont=Ubuntu\ Mono:h18
@@ -20,7 +20,7 @@ set linespace=0
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let g:airline_theme='deus'
+let g:airline_theme='nord'
 set laststatus=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
