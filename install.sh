@@ -4,10 +4,9 @@ git clone git@github.com:katyanna/dotfiles.git ~/.dotfiles && cd ~/.dotfiles || 
 
 mkdir ~/.config
 for package in $(ls -d */)
-  do
-    echo "Instaling package: $package"
-    $(stow $package)
-  done
+do
+  stow --verbose=2 "$package"
+done
 
 if [ -s ~/.vim/autoload/plug.vim ]; then
   echo "VimPlug already installed for Vim"
