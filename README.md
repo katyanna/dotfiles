@@ -4,6 +4,10 @@ My environment
 ## Dependencies
 
  - [Git](https://git-scm.com/)
+ - [tmux](https://github.com/tmux/tmux/wiki)
+   ```bash
+    $ brew install tmux
+   ```
  - [GNU Stow](https://www.gnu.org/software/stow/)
    ```bash
     $ brew install stow
