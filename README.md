@@ -17,7 +17,7 @@ Install
 -------
 
 ```bash
-$ git clone git@github.com:brunohenrique/dotfiles.git
+$ git clone git@github.com:katyanna/dotfiles.git
 $ cd dotfiles/
 $ ./install.sh
 ```
