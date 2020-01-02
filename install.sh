@@ -1,6 +1,6 @@
 #!/bin/sh
 
-git clone git@github.com:katyanna/dotfiles.git ~/.dotfiles && cd ~/.dotfiles
+git clone git@github.com:katyanna/dotfiles.git ~/.dotfiles && cd ~/.dotfiles || exit
 
 mkdir ~/.config
 for package in $(ls -d */)
