@@ -1,11 +1,17 @@
 My environment
-===================
+==============
 
 ## Dependencies
 
- - [GNU Stow](https://www.gnu.org/software/stow/)
  - [Git](https://git-scm.com/)
+ - [GNU Stow](https://www.gnu.org/software/stow/)
+   ```bash
+    $ brew install stow
+   ```
  - [Zplug](https://github.com/zplug/zplug)
+   ```bash
+   $ brew install zplug
+   ```
 
 Install
 -------
