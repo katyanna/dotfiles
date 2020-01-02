@@ -25,9 +25,9 @@
   new = green
 
 [color "status"]
-	added = green
-	changed = yellow
-	untracked = cyan
+  added = green
+  changed = yellow
+  untracked = cyan
 
 [push]
   # 'git push' will push the current branch to its tracking branch
@@ -80,10 +80,10 @@
   cian = commit --amend --no-edit
   logt = log --graph --abbrev-commit --decorate --date=relative --all
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+  insteadOf = https://github.com/
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
 [commit]
-	verbose = true
+  verbose = true
