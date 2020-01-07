@@ -16,6 +16,10 @@ My environment
    ```bash
    $ brew install zplug
    ```
+ - [Ag](https://github.com/ggreer/the_silver_searcher)
+   ```bash
+   $ brew install the_silver_searcher
+   ```
 
 Install
 -------
