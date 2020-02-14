@@ -3,16 +3,16 @@ call plug#begin('~/.vim/plugged')
 
 "styles/colors
 Plug 'bling/vim-airline'
-Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim/' }
-Plug 'rhysd/vim-color-spring-night', { 'rtp': 'vim/' }
+"Plug 'chriskempson/tomorrow-theme', { 'rtp': 'vim/' }
+"Plug 'rhysd/vim-color-spring-night', { 'rtp': 'vim/' }
 Plug 'AlessandroYorba/Arcadia', { 'rtp': 'vim/' }
 Plug 'arcticicestudio/nord-vim'
 Plug 'cloud-oak/vim-colors-alchemy', { 'rtp': 'vim/' }
 Plug 'vim-airline/vim-airline-themes'
+Plug 'guns/xterm-color-table.vim'
 
 "langs
-Plug 'Quramy/vison'
-Plug 'Shougo/unite.vim'
+Plug 'Quramy/vison' #json
 Plug 'sheerun/vim-polyglot'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go'
@@ -29,11 +29,9 @@ Plug 'davidhalter/jedi-vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'guns/xterm-color-table.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mattn/gist-vim'
-Plug 'mattn/webapi-vim'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'

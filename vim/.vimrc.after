@@ -8,9 +8,6 @@ colorscheme nord
 "set guifont=Ubuntu\ Mono:h18
 set guifont=Ubuntu\ Mono\ Bold\ 12
 "set guifont=Monaco\ Bold\ 9.5
-"set guifont=Monaco\ 9.5
-"set guifont=Monospace\ Bold\ 10
-"set guifont=Monospace\ 10
 
 " Highlight current line
 set cursorline
@@ -52,10 +49,6 @@ nnoremap <Down> :echoe "Use j"<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
-
-" Make those debugger statements painfully obvious
-au BufEnter *.rb syn match error contained "\<binding.pry\>"
-au BufEnter *.rb syn match error contained "\<debugger\>"
 
 " Hyperfocus-writing in Vim with Limelight
 

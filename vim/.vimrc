@@ -7,12 +7,6 @@ set term=screen-256color
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
 
-" TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
-" source ~/.vimrc.before if it exists.
-if filereadable(expand("~/.vimrc.before"))
-  source ~/.vimrc.before
-endif
-
 " ================ General Config ====================
 
 set number                      "Line numbers are good
@@ -41,11 +35,13 @@ syntax on
 " =============== NeoBundle Initialization ===============
 " This loads all the plugins specified in ~/.vimrc.bundles
 " Use NeoBundle plugin to manage all other plugins
+
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
 " ================ Turn Off Swap Files ==============
+
 set noswapfile
 set nobackup
 set nowb
@@ -81,7 +77,7 @@ set linebreak    "Wrap lines at convenient points"
 " ================ Folds ============================
 
 set foldmethod=indent   "fold based on indent
-set foldnestmax=3       "deepest fold is 3 levels
+set foldnestmax=5       "deepest fold is 5 levels
 set nofoldenable        "dont fold by default
 
 " ================ Completion =======================
@@ -92,9 +88,7 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 set wildignore+=*vim/backups*
 set wildignore+=*sass-cache*
 set wildignore+=*DS_Store*
-set wildignore+=vendor/rails/**
 set wildignore+=vendor/cache/**
-set wildignore+=*.gem
 set wildignore+=log/**
 set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
