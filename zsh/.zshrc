@@ -17,4 +17,4 @@ zplug "zsh-users/zsh-autosuggestions"
 
 zplug load
 
-export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
+export PATH="/usr/local/bin/:$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
