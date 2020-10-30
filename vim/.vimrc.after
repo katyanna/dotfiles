@@ -9,24 +9,42 @@ colorscheme nord
 set guifont=Ubuntu\ Mono\ Bold\ 12
 "set guifont=Monaco\ Bold\ 9.5
 
-" Highlight current line
+"highlight current line
 set cursorline
 
 "define the space between lines"
 set linespace=0
 
+"Ctrl+R reloads the ~/.vimrc file
+nnoremap <F12> :source ~/.vimrc
+
+" ___________________________________________________________________________________
+
+" NERDTree
+nnoremap <Leader>p :NERDTreeToggle<CR>
+
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+" Ale
+" "Check Python files
+let b:ale_linters = ['pyls', 'pylint', 'black']
+let b:ale_warn_about_trailing_whitespace = 0
+" "Airline integration
+let g:airline#extensions#ale#enabled = 1
+
+" Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='nord'
 set laststatus=2
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ack
-" "
 " " Adds :Ack complete w/ quick fix. I prefer to use :Ack! which does not open
 " " the first thing it finds automatically.
-" """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"
 map <leader>a :Ack!<space>
 map <leader>A :Ack! <C-R><C-W><CR>
 let g:ackprg="ag --nocolor --nogroup --column"
@@ -35,24 +53,8 @@ let g:ackprg="ag --nocolor --nogroup --column"
 set signcolumn=yes
 highlight clear SignColumn
 
-" NERDTree mappings
-nnoremap <Leader>p :NERDTreeToggle<CR>
-
-" Ctrl+R reloads the ~/.vimrc file
-nnoremap <F12> :source ~/.vimrc
-
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
-" Tagbar
-nmap <F8> :TagbarToggle<CR>
-
-" Hyperfocus-writing in Vim with Limelight
-
-" Color name (:help cterm-colors) or ANSI code
+" Limelight -  Hyperfocus-writing
+" " Color name (:help cterm-colors) or ANSI code
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
 
@@ -62,3 +64,26 @@ let g:limelight_conceal_guifg = '#777777'
 
 " Default: 0.5
 let g:limelight_default_coefficient = 0.7
+
+" Black
+" " run on save
+autocmd BufWritePre *.py execute ':Black'
+
+" LanguageClient-neovim
+" Required for operations modifying multiple buffers like rename.
+"set hidden
+
+let g:LanguageClient_serverCommands = {'python': ['~/.pyenv/shims/pyls'],}
+
+"nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+"" Or map each action separately
+"nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+"nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+" Goyo
+nnoremap <Leader>gy :Goyo<CR>
+let g:goyo_width = 102
+" " text focus
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!

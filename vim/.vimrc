@@ -20,6 +20,7 @@ set autoread                    "Reload files changed outside vim
 set splitbelow
 set splitright
 set relativenumber
+set tw=100                      "Line width
 
 " http://usevim.com/2014/07/11/key-speed/
 set timeoutlen=2000 ttimeoutlen=0

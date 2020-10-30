@@ -24,8 +24,27 @@ zplug "zsh-users/zsh-autosuggestions"
 
 zplug load
 
+export WORKON_HOME=~/.ve
+export PROJECT_HOME=~/workspace
+eval "$(pyenv init -)"
+pyenv virtualenvwrapper_lazy
+
 export PATH="/usr/local/bin/:$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
+alias msp="./manage.py shell_plus"
+alias wt="workon thermondo-backend"
+alias hr="heroku run python manage.py shell_plus -a"
+
+alias hi="~/workspace/work/hi-work.sh"
+alias tchau="~/workspace/work/bye-work.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval $(thefuck --alias)
