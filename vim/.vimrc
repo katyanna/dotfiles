@@ -41,13 +41,19 @@ if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
 
-" ================ Turn Off Swap Files ==============
+" ================== Activate Mappings ================
+
+if filereadable(expand("~/.vimrc.mappings"))
+  source ~/.vimrc.mappings
+endif
+
+" ================ Turn Off Swap Files ================
 
 set noswapfile
 set nobackup
 set nowb
 
-" ================ Persistent Undo ==================
+" ================== Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
 
@@ -55,7 +61,7 @@ silent !mkdir ~/.vim/backups > /dev/null 2>&1
 set undodir=~/.vim/backups
 set undofile
 
-" ================ Indentation ======================
+" ==================== Indentation ====================
 
 set autoindent
 set expandtab

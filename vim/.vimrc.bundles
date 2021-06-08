@@ -11,6 +11,7 @@ Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'guns/xterm-color-table.vim'
 Plug 'ryanoasis/vim-webdevicons'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 " langs
 Plug 'Quramy/vison' "json
@@ -25,8 +26,11 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 
+" Go
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 " Python
-"Plug 'psf/black', { 'branch': 'stable' }
+Plug 'psf/black', { 'branch': 'stable' }
 "Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 "Plug 'jeetsukumaran/vim-pythonsense'
 
@@ -44,7 +48,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'ludovicchabant/vim-gutentags'
-"Plug 'liuchengxu/vim-clap'
+Plug 'liuchengxu/vim-clap'
 "Plug 'junegunn/fzf'
 "Plug 'liuchengxu/vista.vim' " tagbar
 
