@@ -2,7 +2,12 @@
 
 git clone git@github.com:katyanna/dotfiles.git ~/.dotfiles && cd ~/.dotfiles || exit
 
-brew install stow tmux zplug the_silver_searcher gh
+packages = ( stow tmux zplug the_silver_searcher zsh-autosuggestions zsh-syntax-highlighting gh )
+for package in "${packages[@]}"
+do
+    brew install package
+done
+
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 
@@ -11,6 +16,8 @@ for package in $(ls -d */)
 do
   stow --verbose=2 "$package"
 done
+
+zplug install
 
 if [ -s ~/.vim/autoload/plug.vim ]; then
   echo "VimPlug already installed for Vim"

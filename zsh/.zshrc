@@ -24,7 +24,6 @@ source $ZPLUG_HOME/init.zsh
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
-
 zplug load
 
 export WORKON_HOME=~/.ve
@@ -40,7 +39,6 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 alias msp="./manage.py shell_plus"
 alias wt="workon thermondo-backend"
