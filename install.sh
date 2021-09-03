@@ -2,6 +2,10 @@
 
 git clone git@github.com:katyanna/dotfiles.git ~/.dotfiles && cd ~/.dotfiles || exit
 
+brew install stow tmux zplug the_silver_searcher gh
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
+
 mkdir ~/.config
 for package in $(ls -d */)
 do

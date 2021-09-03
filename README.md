@@ -1,48 +1,17 @@
-My environment
-==============
+# My environment
 
-## Dependencies
-
- - [Git](https://git-scm.com/)
- - [tmux](https://github.com/tmux/tmux/wiki)
-   ```bash
-   brew install tmux
-   ```
- - [GNU Stow](https://www.gnu.org/software/stow/)
-   ```bash
-   brew install stow
-   ```
- - [Zplug](https://github.com/zplug/zplug)
-   ```bash
-   brew install zplug
-   ```
- - [Ag](https://github.com/ggreer/the_silver_searcher)
-   ```bash
-   brew install the_silver_searcher
-   ```
-
- - [Nerd Fonts](https://www.nerdfonts.com/)
-   ```bash
-   brew tap homebrew/cask-fonts
-   brew install --cask font-hack-nerd-font
-   ```
-
-Install
--------
-
+## Install
 ```bash
 git clone git@github.com:katyanna/dotfiles.git
 cd dotfiles/ && ./install.sh
 ```
 
-After installation
-------------------
+## After installation
 ```bash
 p10k configure
 ```
 
-Terminal bindings
-=================
+## Terminal bindings
 
 * `Ctrl-a` - Move to the start of the line.
 * `Ctrl-e` - Move to the end of the line.
