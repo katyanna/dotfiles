@@ -23,8 +23,8 @@ My environment
 
  - [Nerd Fonts](https://www.nerdfonts.com/)
    ```bash
-   $ brew tap caskroom/fonts
-   $ brew cask install font-hack-nerd-font
+   $ brew tap homebrew/cask-fonts
+   $ brew install --cask font-hack-nerd-font
    ```
 
 Install
