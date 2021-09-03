@@ -6,34 +6,33 @@ My environment
  - [Git](https://git-scm.com/)
  - [tmux](https://github.com/tmux/tmux/wiki)
    ```bash
-    $ brew install tmux
+   brew install tmux
    ```
  - [GNU Stow](https://www.gnu.org/software/stow/)
    ```bash
-    $ brew install stow
+   brew install stow
    ```
  - [Zplug](https://github.com/zplug/zplug)
    ```bash
-   $ brew install zplug
+   brew install zplug
    ```
  - [Ag](https://github.com/ggreer/the_silver_searcher)
    ```bash
-   $ brew install the_silver_searcher
+   brew install the_silver_searcher
    ```
 
  - [Nerd Fonts](https://www.nerdfonts.com/)
    ```bash
-   $ brew tap homebrew/cask-fonts
-   $ brew install --cask font-hack-nerd-font
+   brew tap homebrew/cask-fonts
+   brew install --cask font-hack-nerd-font
    ```
 
 Install
 -------
 
 ```bash
-$ git clone git@github.com:katyanna/dotfiles.git
-$ cd dotfiles/
-$ ./install.sh
+git clone git@github.com:katyanna/dotfiles.git
+cd dotfiles/ && ./install.sh
 ```
 
 Terminal bindings
