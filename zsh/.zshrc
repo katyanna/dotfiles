@@ -26,42 +26,57 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug load
 
-export WORKON_HOME=~/.ve
-export PROJECT_HOME=~/workspace
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-pyenv virtualenvwrapper_lazy
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-
-export PATH="/usr/local/bin/:$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
 source ~/powerlevel10k/powerlevel10k.zsh-theme
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-alias msp="./manage.py shell_plus"
-alias wt="workon thermondo-backend"
-alias hr="heroku run python manage.py shell_plus -a"
-alias manage="python $VIRTUAL_ENV/../manage.py"
-alias tree="tree -a -I '__pycache__|.git'"
-
-alias hi="~/workspace/work/hi-work.sh"
-alias tchau="~/workspace/work/bye-work.sh"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 eval $(thefuck --alias)
 
-export FZF_DEFAULT_OPTS="--layout=reverse --inline-info"
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0_1/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/2.7.2/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+export WORKON_HOME=~/.ve
+export PROJECT_HOME=~/workspace
 
-export GOPATH=$HOME/go-workspace
-export GOROOT=/usr/local/opt/go/libexec
+
+### NeoVim
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+
+### Python
+#eval "$(pyenv init -)"
+#eval "$(pyenv virtualenv-init -)"
+#pyenv virtualenvwrapper_lazy
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+alias manage="python $VIRTUAL_ENV/../manage.py"
+
+
+### Golang
+export GOPATH=$HOME/workspace
+export GOROOT=/usr/local/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+
+
+# kubectl
+alias k=kubectl
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+
+# zalando
+JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
+export GOPRIVATE=github.bus.zalan.do
+alias zk=zkubectl
+alias clm=~/worspace/cluster-lifecycle-manager/build/clm
+
+
+###
+
+export PATH="/usr/local/bin/:$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
+
+alias hi="~/workspace/work/hi-work.sh"
+alias tchau="~/workspace/work/bye-work.sh"
+alias tree="tree -a -I '__pycache__|.git'"
