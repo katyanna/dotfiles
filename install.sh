@@ -2,10 +2,10 @@
 
 git clone git@github.com:katyanna/dotfiles.git ~/.dotfiles && cd ~/.dotfiles || exit
 
-packages = ( stow tmux zplug the_silver_searcher zsh-autosuggestions zsh-syntax-highlighting gh )
+packages=("stow" "tmux" "zplug" "the_silver_searcher" "zsh-autosuggestions" "zsh-syntax-highlighting" "gh")
 for package in "${packages[@]}"
 do
-    brew install package
+    brew install "$package"
 done
 
 brew tap homebrew/cask-fonts
