@@ -61,22 +61,14 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
 
 
-# kubectl
-alias k=kubectl
+### Postgres
+export PATH="/usr/local/bin/:$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
+
+
+### kubectl
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
 
-# zalando
-JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home
-export GOPRIVATE=github.bus.zalan.do
-alias zk=zkubectl
-alias clm=~/worspace/cluster-lifecycle-manager/build/clm
-
-
-###
-
-export PATH="/usr/local/bin/:$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
-
-alias hi="~/workspace/work/hi-work.sh"
-alias tchau="~/workspace/work/bye-work.sh"
+### Aliases
+alias k=kubectl
 alias tree="tree -a -I '__pycache__|.git'"
