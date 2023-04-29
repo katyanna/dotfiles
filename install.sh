@@ -14,7 +14,7 @@ brew install --cask font-hack-nerd-font
 mkdir ~/.config
 for package in $(ls -d */)
 do
-  stow --verbose=2 "$package"
+  stow --verbose=2 --target=$HOME "$package"
 done
 
 zplug install
