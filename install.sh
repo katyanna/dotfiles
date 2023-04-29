@@ -2,7 +2,7 @@
 
 git clone git@github.com:katyanna/dotfiles.git ~/.dotfiles && cd ~/.dotfiles || exit
 
-packages=("stow" "tmux" "zplug" "the_silver_searcher" "zsh-autosuggestions" "zsh-syntax-highlighting" "gh")
+packages=("stow" "tmux" "zplug" "the_silver_searcher" "zsh-autosuggestions" "zsh-syntax-highlighting" "gh" "neovim")
 for package in "${packages[@]}"
 do
     brew install "$package"
@@ -18,15 +18,6 @@ do
 done
 
 zplug install
-
-if [ -s ~/.vim/autoload/plug.vim ]; then
-  echo "VimPlug already installed for Vim"
-else
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-fi
-
-vim +PlugInstall +qall
 
 git clone git@github.com:powerline/fonts.git ~/fonts
 cd ~/fonts && ./install.sh
