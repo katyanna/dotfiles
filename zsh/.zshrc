@@ -72,3 +72,5 @@ export PATH="/usr/local/bin/:$PATH:/Applications/Postgres.app/Contents/Versions/
 ### Aliases
 alias k=kubectl
 alias tree="tree -a -I '__pycache__|.git'"
+
+source ~/.config-pvt/zshrc
