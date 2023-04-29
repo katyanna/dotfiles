@@ -133,7 +133,7 @@ _G.packer_plugins = {
     url = "https://github.com/rhysd/git-messenger.vim"
   },
   ["gitsigns.nvim"] = {
-    config = { "\27LJ\2\nÖ\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0&current_line_blame_formatter_opts\1\0\1\18relative_time\1\28current_line_blame_opts\1\0\3\14virt_text\2\ndelay\3è\a\18virt_text_pos\beol\1\0\1\23current_line_blame\2\nsetup\rgitsigns\frequire\0" },
+    config = { "\27LJ\2\nÖ\1\0\0\4\0\b\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0005\3\4\0=\3\5\0025\3\6\0=\3\a\2B\0\2\1K\0\1\0&current_line_blame_formatter_opts\1\0\1\18relative_time\1\28current_line_blame_opts\1\0\3\18virt_text_pos\beol\14virt_text\2\ndelay\3è\a\1\0\1\23current_line_blame\2\nsetup\rgitsigns\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -149,7 +149,7 @@ _G.packer_plugins = {
     url = "https://github.com/rmagatti/goto-preview"
   },
   ["lualine.nvim"] = {
-    config = { "\27LJ\2\nÿ\3\0\0\a\0\27\0-6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\a\0005\4\6\0=\4\b\0035\4\t\0=\4\n\0034\4\3\0005\5\v\0>\5\1\4=\4\f\0035\4\16\0005\5\r\0005\6\14\0=\6\15\5>\5\1\4=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\3=\3\22\0025\3\24\0004\4\3\0005\5\23\0>\5\1\4=\4\b\0034\4\0\0=\4\n\0034\4\0\0=\4\f\0034\4\0\0=\4\17\0034\4\0\0=\4\19\0035\4\25\0=\4\21\3=\3\26\2B\0\2\1K\0\1\0\ftabline\1\2\0\0\ttabs\1\0\0\1\2\0\0\fbuffers\rsections\14lualine_z\1\2\0\0\rlocation\14lualine_y\1\2\0\0\rprogress\14lualine_x\1\5\0\0\0\rencoding\15fileformat\rfiletype\fsymbols\1\0\4\tinfo\tï„© \nerror\tï€ \thint\tï ´ \twarn\tï„ª \1\2\0\0\16diagnostics\14lualine_c\1\2\1\0\rfilename\tpath\3\1\14lualine_b\1\3\0\0\vbranch\tdiff\14lualine_a\1\0\0\1\2\0\0\tmode\foptions\1\0\0\1\0\1\ntheme\tnord\nsetup\flualine\frequire\0" },
+    config = { "\27LJ\2\nÿ\3\0\0\a\0\27\0-6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\a\0005\4\6\0=\4\b\0035\4\t\0=\4\n\0034\4\3\0005\5\v\0>\5\1\4=\4\f\0035\4\16\0005\5\r\0005\6\14\0=\6\15\5>\5\1\4=\4\17\0035\4\18\0=\4\19\0035\4\20\0=\4\21\3=\3\22\0025\3\24\0004\4\3\0005\5\23\0>\5\1\4=\4\b\0034\4\0\0=\4\n\0034\4\0\0=\4\f\0034\4\0\0=\4\17\0034\4\0\0=\4\19\0035\4\25\0=\4\21\3=\3\26\2B\0\2\1K\0\1\0\ftabline\1\2\0\0\ttabs\1\0\0\1\2\0\0\fbuffers\rsections\14lualine_z\1\2\0\0\rlocation\14lualine_y\1\2\0\0\rprogress\14lualine_x\1\5\0\0\0\rencoding\15fileformat\rfiletype\fsymbols\1\0\4\twarn\tï„ª \nerror\tï€ \thint\tï ´ \tinfo\tï„© \1\2\0\0\16diagnostics\14lualine_c\1\2\1\0\rfilename\tpath\3\1\14lualine_b\1\3\0\0\vbranch\tdiff\14lualine_a\1\0\0\1\2\0\0\tmode\foptions\1\0\0\1\0\1\ntheme\tnord\nsetup\flualine\frequire\0" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
@@ -157,7 +157,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["mason-lspconfig.nvim"] = {
-    config = { "\27LJ\2\nw\0\2\a\1\6\0\v-\2\0\0009\2\0\2B\2\1\0016\2\1\0009\2\2\0029\2\3\2)\4\0\0'\5\4\0'\6\5\0B\2\4\1K\0\1\0\0À\27v:lua.vim.lsp.omnifunc\romnifunc\24nvim_buf_set_option\bapi\bvim\nsetupÅ\1\0\1\5\2\t\0\0156\1\0\0'\3\1\0B\1\2\0028\1\0\0019\1\2\0015\3\3\0-\4\0\0=\4\4\0035\4\5\0=\4\6\3-\4\1\0009\4\a\4=\4\b\3B\1\2\1K\0\1\0\1À\0À\rsettings\14languages\nflags\1\0\2\26debounce_text_changes\3ô\3\17exit_timeout\3\0\14on_attach\1\0\1\24single_file_support\2\nsetup\14lspconfig\frequireë\1\1\0\6\0\n\0\0226\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0023\1\a\0006\2\0\0'\4\1\0B\2\2\0029\2\b\0024\4\3\0003\5\t\0>\5\1\4B\2\2\0012\0\0€K\0\1\0\0\19setup_handlers\0\22user.lsp_settings\21ensure_installed\1\0\0\1\b\0\0\16sumneko_lua\befm\ngopls\fpyright\vclangd\vtexlab\vyamlls\nsetup\20mason-lspconfig\frequire\0" },
+    config = { "\27LJ\2\nw\0\2\a\1\6\0\v-\2\0\0009\2\0\2B\2\1\0016\2\1\0009\2\2\0029\2\3\2)\4\0\0'\5\4\0'\6\5\0B\2\4\1K\0\1\0\0À\27v:lua.vim.lsp.omnifunc\romnifunc\24nvim_buf_set_option\bapi\bvim\nsetupÅ\1\0\1\5\2\t\0\0156\1\0\0'\3\1\0B\1\2\0028\1\0\0019\1\2\0015\3\3\0-\4\0\0=\4\4\0035\4\5\0=\4\6\3-\4\1\0009\4\a\4=\4\b\3B\1\2\1K\0\1\0\1À\0À\rsettings\14languages\nflags\1\0\2\17exit_timeout\3\0\26debounce_text_changes\3ô\3\14on_attach\1\0\1\24single_file_support\2\nsetup\14lspconfig\frequireæ\1\1\0\6\0\n\0\0226\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0023\1\a\0006\2\0\0'\4\1\0B\2\2\0029\2\b\0024\4\3\0003\5\t\0>\5\1\4B\2\2\0012\0\0€K\0\1\0\0\19setup_handlers\0\22user.lsp_settings\21ensure_installed\1\0\0\1\b\0\0\vlua_ls\befm\ngopls\fpyright\vclangd\vtexlab\vyamlls\nsetup\20mason-lspconfig\frequire\0" },
     load_after = {},
     loaded = true,
     needs_bufread = false,
@@ -173,7 +173,7 @@ _G.packer_plugins = {
     url = "https://github.com/williamboman/mason.nvim"
   },
   ["nordic.nvim"] = {
-    config = { "\27LJ\2\n¬\3\0\3\6\0\r\0,4\3\t\0005\4\0\0009\5\1\0>\5\2\4>\4\1\0035\4\2\0009\5\1\0>\5\2\4>\4\2\0035\4\3\0009\5\1\0>\5\2\4>\4\3\0034\4\3\0005\5\4\0>\5\1\0049\5\5\0>\5\2\4>\4\4\0034\4\3\0005\5\6\0>\5\1\0049\5\1\0>\5\2\4>\4\5\0034\4\3\0005\5\a\0>\5\1\0049\5\b\0>\5\2\4>\4\6\0034\4\3\0005\5\t\0>\5\1\0049\5\n\0>\5\2\4>\4\a\0034\4\3\0005\5\v\0>\5\1\0049\5\f\0>\5\2\4>\4\b\3L\3\2\0\16bright_cyan\1\2\0\0\20@function.macro\tcyan\1\4\0\0\f@string\20@string.special\vString\17intense_blue\1\3\0\0\r@keyword\v@field\1\4\0\0\n@type\14@variable\fSpecial\vpurple\1\3\0\0\r@include\v@label\1\2\0\0\27TelescopePreviewBorder\1\2\0\0\27TelescopeResultsBorder\tblue\1\2\0\0\26TelescopePromptBorderÜ\1\1\0\4\0\t\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\6\0003\3\a\0=\3\b\2B\0\2\1K\0\1\0\18custom_colors\0\1\0\5\21underline_option\14underline\26alternate_backgrounds\1\17minimal_mode\2\20italic_comments\2\vitalic\1\16colorscheme\vnordic\frequire\23colorscheme nordic\bcmd\bvim\0" },
+    config = { "\27LJ\2\n¬\3\0\3\6\0\r\0,4\3\t\0005\4\0\0009\5\1\0>\5\2\4>\4\1\0035\4\2\0009\5\1\0>\5\2\4>\4\2\0035\4\3\0009\5\1\0>\5\2\4>\4\3\0034\4\3\0005\5\4\0>\5\1\0049\5\5\0>\5\2\4>\4\4\0034\4\3\0005\5\6\0>\5\1\0049\5\1\0>\5\2\4>\4\5\0034\4\3\0005\5\a\0>\5\1\0049\5\b\0>\5\2\4>\4\6\0034\4\3\0005\5\t\0>\5\1\0049\5\n\0>\5\2\4>\4\a\0034\4\3\0005\5\v\0>\5\1\0049\5\f\0>\5\2\4>\4\b\3L\3\2\0\16bright_cyan\1\2\0\0\20@function.macro\tcyan\1\4\0\0\f@string\20@string.special\vString\17intense_blue\1\3\0\0\r@keyword\v@field\1\4\0\0\n@type\14@variable\fSpecial\vpurple\1\3\0\0\r@include\v@label\1\2\0\0\27TelescopePreviewBorder\1\2\0\0\27TelescopeResultsBorder\tblue\1\2\0\0\26TelescopePromptBorderÜ\1\1\0\4\0\t\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\6\0003\3\a\0=\3\b\2B\0\2\1K\0\1\0\18custom_colors\0\1\0\5\vitalic\1\21underline_option\14underline\26alternate_backgrounds\1\17minimal_mode\2\20italic_comments\2\16colorscheme\vnordic\frequire\23colorscheme nordic\bcmd\bvim\0" },
     loaded = true,
     path = "/Users/katyanna/.local/share/nvim/site/pack/packer/start/nordic.nvim",
     url = "https://github.com/andersevenrud/nordic.nvim"
@@ -189,8 +189,14 @@ _G.packer_plugins = {
     path = "/Users/katyanna/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
   },
+  ["nvim-tree.lua"] = {
+    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
+    loaded = true,
+    path = "/Users/katyanna/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
+    url = "https://github.com/nvim-tree/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
-    config = { "\27LJ\2\n¸\1\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\0025\3\5\0=\3\6\2B\0\2\1K\0\1\0\14highlight\1\0\2&additional_vim_regex_highlighting\1\venable\2\19ignore_install\1\0\1\21ensure_installed\ball\nsetup\28nvim-treesitter.configs\frequire\0" },
+    config = { "\27LJ\2\n¸\1\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\0025\3\5\0=\3\6\2B\0\2\1K\0\1\0\14highlight\1\0\2\venable\2&additional_vim_regex_highlighting\1\19ignore_install\1\0\1\21ensure_installed\ball\nsetup\28nvim-treesitter.configs\frequire\0" },
     loaded = true,
     path = "/Users/katyanna/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
@@ -266,7 +272,7 @@ _G.packer_plugins = {
     url = "https://github.com/mattn/webapi-vim"
   },
   ["which-key.nvim"] = {
-    config = { "\27LJ\2\n\1\0\0\5\0\t\0\0166\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\0016\0\0\0'\2\b\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\17user.keymaps\fplugins\1\0\0\rspelling\1\0\0\1\0\2\fenabled\2\16suggestions\3\20\nsetup\14which-key\frequire\0" },
+    config = { "\27LJ\2\n\1\0\0\5\0\t\0\0166\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\0016\0\0\0'\2\b\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\17user.keymaps\fplugins\1\0\0\rspelling\1\0\0\1\0\2\16suggestions\3\20\fenabled\2\nsetup\14which-key\frequire\0" },
     loaded = true,
     path = "/Users/katyanna/.local/share/nvim/site/pack/packer/start/which-key.nvim",
     url = "https://github.com/folke/which-key.nvim"
@@ -274,53 +280,81 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: telescope.nvim
+time([[Config for telescope.nvim]], true)
+try_loadstring("\27LJ\2\n†\2\0\0\5\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\3=\3\v\2B\0\2\1K\0\1\0\rdefaults\1\0\0\25file_ignore_patterns\1\3\0\0\vvendor\17node_modules\fset_env\1\0\1\14COLORTERM\14truecolor\18layout_config\1\0\1\20prompt_position\btop\1\0\2\21sorting_strategy\14ascending\19color_devicons\1\nsetup\14telescope\frequire\0", "config", "telescope.nvim")
+time([[Config for telescope.nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\2\n\1\0\0\5\0\t\0\0166\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\0016\0\0\0'\2\b\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\17user.keymaps\fplugins\1\0\0\rspelling\1\0\0\1\0\2\16suggestions\3\20\fenabled\2\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
+-- Config for: nvim-colorizer.lua
+time([[Config for nvim-colorizer.lua]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
+time([[Config for nvim-colorizer.lua]], false)
+-- Config for: LuaSnip
+time([[Config for LuaSnip]], true)
+try_loadstring("\27LJ\2\nI\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\tload\29luasnip.loaders.from_lua\frequire\0", "config", "LuaSnip")
+time([[Config for LuaSnip]], false)
+-- Config for: nordic.nvim
+time([[Config for nordic.nvim]], true)
+try_loadstring("\27LJ\2\n¬\3\0\3\6\0\r\0,4\3\t\0005\4\0\0009\5\1\0>\5\2\4>\4\1\0035\4\2\0009\5\1\0>\5\2\4>\4\2\0035\4\3\0009\5\1\0>\5\2\4>\4\3\0034\4\3\0005\5\4\0>\5\1\0049\5\5\0>\5\2\4>\4\4\0034\4\3\0005\5\6\0>\5\1\0049\5\1\0>\5\2\4>\4\5\0034\4\3\0005\5\a\0>\5\1\0049\5\b\0>\5\2\4>\4\6\0034\4\3\0005\5\t\0>\5\1\0049\5\n\0>\5\2\4>\4\a\0034\4\3\0005\5\v\0>\5\1\0049\5\f\0>\5\2\4>\4\b\3L\3\2\0\16bright_cyan\1\2\0\0\20@function.macro\tcyan\1\4\0\0\f@string\20@string.special\vString\17intense_blue\1\3\0\0\r@keyword\v@field\1\4\0\0\n@type\14@variable\fSpecial\vpurple\1\3\0\0\r@include\v@label\1\2\0\0\27TelescopePreviewBorder\1\2\0\0\27TelescopeResultsBorder\tblue\1\2\0\0\26TelescopePromptBorderÜ\1\1\0\4\0\t\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\6\0003\3\a\0=\3\b\2B\0\2\1K\0\1\0\18custom_colors\0\1\0\5\vitalic\1\21underline_option\14underline\26alternate_backgrounds\1\17minimal_mode\2\20italic_comments\2\16colorscheme\vnordic\frequire\23colorscheme nordic\bcmd\bvim\0", "config", "nordic.nvim")
+time([[Config for nordic.nvim]], false)
+-- Config for: mason.nvim
+time([[Config for mason.nvim]], true)
+try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nmason\frequire\0", "config", "mason.nvim")
+time([[Config for mason.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
-try_loadstring("\27LJ\2\n¸\1\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\0025\3\5\0=\3\6\2B\0\2\1K\0\1\0\14highlight\1\0\2&additional_vim_regex_highlighting\1\venable\2\19ignore_install\1\0\1\21ensure_installed\ball\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
+try_loadstring("\27LJ\2\n¸\1\0\0\4\0\a\0\v6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0004\3\0\0=\3\4\0025\3\5\0=\3\6\2B\0\2\1K\0\1\0\14highlight\1\0\2\venable\2&additional_vim_regex_highlighting\1\19ignore_install\1\0\1\21ensure_installed\ball\nsetup\28nvim-treesitter.configs\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
 -- Config for: symbols-outline.nvim
 time([[Config for symbols-outline.nvim]], true)
 try_loadstring("\27LJ\2\nJ\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\twrap\2\nsetup\20symbols-outline\frequire\0", "config", "symbols-outline.nvim")
 time([[Config for symbols-outline.nvim]], false)
--- Config for: LuaSnip
-time([[Config for LuaSnip]], true)
-try_loadstring("\27LJ\2\nI\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\tload\29luasnip.loaders.from_lua\frequire\0", "config", "LuaSnip")
-time([[Config for LuaSnip]], false)
--- Config for: which-key.nvim
-time([[Config for which-key.nvim]], true)
-try_loadstring("\27LJ\2\n\1\0\0\5\0\t\0\0166\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\6\0005\3\4\0005\4\3\0=\4\5\3=\3\a\2B\0\2\0016\0\0\0'\2\b\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\17user.keymaps\fplugins\1\0\0\rspelling\1\0\0\1\0\2\fenabled\2\16suggestions\3\20\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
-time([[Config for which-key.nvim]], false)
--- Config for: mason.nvim
-time([[Config for mason.nvim]], true)
-try_loadstring("\27LJ\2\n3\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\nmason\frequire\0", "config", "mason.nvim")
-time([[Config for mason.nvim]], false)
--- Config for: telescope.nvim
-time([[Config for telescope.nvim]], true)
-try_loadstring("\27LJ\2\n†\2\0\0\5\0\f\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\n\0005\3\3\0005\4\4\0=\4\5\0035\4\6\0=\4\a\0035\4\b\0=\4\t\3=\3\v\2B\0\2\1K\0\1\0\rdefaults\1\0\0\25file_ignore_patterns\1\3\0\0\vvendor\17node_modules\fset_env\1\0\1\14COLORTERM\14truecolor\18layout_config\1\0\1\20prompt_position\btop\1\0\2\21sorting_strategy\14ascending\19color_devicons\1\nsetup\14telescope\frequire\0", "config", "telescope.nvim")
-time([[Config for telescope.nvim]], false)
--- Config for: nvim-colorizer.lua
-time([[Config for nvim-colorizer.lua]], true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\14colorizer\frequire\0", "config", "nvim-colorizer.lua")
-time([[Config for nvim-colorizer.lua]], false)
--- Config for: nordic.nvim
-time([[Config for nordic.nvim]], true)
-try_loadstring("\27LJ\2\n¬\3\0\3\6\0\r\0,4\3\t\0005\4\0\0009\5\1\0>\5\2\4>\4\1\0035\4\2\0009\5\1\0>\5\2\4>\4\2\0035\4\3\0009\5\1\0>\5\2\4>\4\3\0034\4\3\0005\5\4\0>\5\1\0049\5\5\0>\5\2\4>\4\4\0034\4\3\0005\5\6\0>\5\1\0049\5\1\0>\5\2\4>\4\5\0034\4\3\0005\5\a\0>\5\1\0049\5\b\0>\5\2\4>\4\6\0034\4\3\0005\5\t\0>\5\1\0049\5\n\0>\5\2\4>\4\a\0034\4\3\0005\5\v\0>\5\1\0049\5\f\0>\5\2\4>\4\b\3L\3\2\0\16bright_cyan\1\2\0\0\20@function.macro\tcyan\1\4\0\0\f@string\20@string.special\vString\17intense_blue\1\3\0\0\r@keyword\v@field\1\4\0\0\n@type\14@variable\fSpecial\vpurple\1\3\0\0\r@include\v@label\1\2\0\0\27TelescopePreviewBorder\1\2\0\0\27TelescopeResultsBorder\tblue\1\2\0\0\26TelescopePromptBorderÜ\1\1\0\4\0\t\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\3\0'\2\4\0B\0\2\0029\0\5\0005\2\6\0003\3\a\0=\3\b\2B\0\2\1K\0\1\0\18custom_colors\0\1\0\5\21underline_option\14underline\26alternate_backgrounds\1\17minimal_mode\2\20italic_comments\2\vitalic\1\16colorscheme\vnordic\frequire\23colorscheme nordic\bcmd\bvim\0", "config", "nordic.nvim")
-time([[Config for nordic.nvim]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd mason-lspconfig.nvim ]]
 
 -- Config for: mason-lspconfig.nvim
-try_loadstring("\27LJ\2\nw\0\2\a\1\6\0\v-\2\0\0009\2\0\2B\2\1\0016\2\1\0009\2\2\0029\2\3\2)\4\0\0'\5\4\0'\6\5\0B\2\4\1K\0\1\0\0À\27v:lua.vim.lsp.omnifunc\romnifunc\24nvim_buf_set_option\bapi\bvim\nsetupÅ\1\0\1\5\2\t\0\0156\1\0\0'\3\1\0B\1\2\0028\1\0\0019\1\2\0015\3\3\0-\4\0\0=\4\4\0035\4\5\0=\4\6\3-\4\1\0009\4\a\4=\4\b\3B\1\2\1K\0\1\0\1À\0À\rsettings\14languages\nflags\1\0\2\26debounce_text_changes\3ô\3\17exit_timeout\3\0\14on_attach\1\0\1\24single_file_support\2\nsetup\14lspconfig\frequireë\1\1\0\6\0\n\0\0226\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0023\1\a\0006\2\0\0'\4\1\0B\2\2\0029\2\b\0024\4\3\0003\5\t\0>\5\1\4B\2\2\0012\0\0€K\0\1\0\0\19setup_handlers\0\22user.lsp_settings\21ensure_installed\1\0\0\1\b\0\0\16sumneko_lua\befm\ngopls\fpyright\vclangd\vtexlab\vyamlls\nsetup\20mason-lspconfig\frequire\0", "config", "mason-lspconfig.nvim")
+try_loadstring("\27LJ\2\nw\0\2\a\1\6\0\v-\2\0\0009\2\0\2B\2\1\0016\2\1\0009\2\2\0029\2\3\2)\4\0\0'\5\4\0'\6\5\0B\2\4\1K\0\1\0\0À\27v:lua.vim.lsp.omnifunc\romnifunc\24nvim_buf_set_option\bapi\bvim\nsetupÅ\1\0\1\5\2\t\0\0156\1\0\0'\3\1\0B\1\2\0028\1\0\0019\1\2\0015\3\3\0-\4\0\0=\4\4\0035\4\5\0=\4\6\3-\4\1\0009\4\a\4=\4\b\3B\1\2\1K\0\1\0\1À\0À\rsettings\14languages\nflags\1\0\2\17exit_timeout\3\0\26debounce_text_changes\3ô\3\14on_attach\1\0\1\24single_file_support\2\nsetup\14lspconfig\frequireæ\1\1\0\6\0\n\0\0226\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0023\1\a\0006\2\0\0'\4\1\0B\2\2\0029\2\b\0024\4\3\0003\5\t\0>\5\1\4B\2\2\0012\0\0€K\0\1\0\0\19setup_handlers\0\22user.lsp_settings\21ensure_installed\1\0\0\1\b\0\0\vlua_ls\befm\ngopls\fpyright\vclangd\vtexlab\vyamlls\nsetup\20mason-lspconfig\frequire\0", "config", "mason-lspconfig.nvim")
 
 time([[Sequenced loading]], false)
 
 -- Command lazy-loads
 time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Octo lua require("packer.load")({'octo.nvim'}, { cmd = "Octo", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file GitMessager lua require("packer.load")({'git-messenger.vim'}, { cmd = "GitMessager", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Gist lua require("packer.load")({'gist-vim'}, { cmd = "Gist", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file AnyJump lua require("packer.load")({'any-jump.vim'}, { cmd = "AnyJump", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.api.nvim_create_user_command, 'GitMessager', function(cmdargs)
+          require('packer.load')({'git-messenger.vim'}, { cmd = 'GitMessager', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'git-messenger.vim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('GitMessager ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Gist', function(cmdargs)
+          require('packer.load')({'gist-vim'}, { cmd = 'Gist', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'gist-vim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Gist ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'AnyJump', function(cmdargs)
+          require('packer.load')({'any-jump.vim'}, { cmd = 'AnyJump', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'any-jump.vim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('AnyJump ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'Octo', function(cmdargs)
+          require('packer.load')({'octo.nvim'}, { cmd = 'Octo', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'octo.nvim'}, {}, _G.packer_plugins)
+          return vim.fn.getcompletion('Octo ', 'cmdline')
+      end})
 time([[Defining lazy-load commands]], false)
 
 vim.cmd [[augroup packer_load_aucmds]]
@@ -332,10 +366,13 @@ vim.cmd [[au FileType go ++once lua require("packer.load")({'vim-go'}, { ft = "g
 time([[Defining lazy-load filetype autocommands]], false)
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
-vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'ctrlsf.vim', 'editorconfig-vim', 'goto-preview', 'lualine.nvim', 'gitsigns.nvim', 'Comment.nvim', 'todo-comments.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
+vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'ctrlsf.vim', 'todo-comments.nvim', 'editorconfig-vim', 'Comment.nvim', 'goto-preview', 'lualine.nvim', 'gitsigns.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 vim.cmd [[augroup filetypedetect]]
+time([[Sourcing ftdetect script at: /Users/katyanna/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], true)
+vim.cmd [[source /Users/katyanna/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]]
+time([[Sourcing ftdetect script at: /Users/katyanna/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], false)
 time([[Sourcing ftdetect script at: /Users/katyanna/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/cls.vim]], true)
 vim.cmd [[source /Users/katyanna/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/cls.vim]]
 time([[Sourcing ftdetect script at: /Users/katyanna/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/cls.vim]], false)
@@ -345,9 +382,6 @@ time([[Sourcing ftdetect script at: /Users/katyanna/.local/share/nvim/site/pack/
 time([[Sourcing ftdetect script at: /Users/katyanna/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tikz.vim]], true)
 vim.cmd [[source /Users/katyanna/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tikz.vim]]
 time([[Sourcing ftdetect script at: /Users/katyanna/.local/share/nvim/site/pack/packer/opt/vimtex/ftdetect/tikz.vim]], false)
-time([[Sourcing ftdetect script at: /Users/katyanna/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], true)
-vim.cmd [[source /Users/katyanna/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]]
-time([[Sourcing ftdetect script at: /Users/katyanna/.local/share/nvim/site/pack/packer/opt/vim-go/ftdetect/gofiletype.vim]], false)
 vim.cmd("augroup END")
 
 _G._packer.inside_compile = false

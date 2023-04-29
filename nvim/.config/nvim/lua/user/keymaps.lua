@@ -1,5 +1,4 @@
 local M = {}
-
 i_mappings = {
   ['<C-C>'] = { '<Esc>', 'Esc' },
   ['<C-K>'] = { '<CMD>lua require("luasnip").expand_or_jump()<CR>', 'Expand Snippet' },
@@ -19,6 +18,7 @@ n_mappings = {
   ['<Up>'] = { '<CMD>echoe "Use k"<CR>', 'Use k' },
   ['<Down>'] = { '<CMD>echoe "Use j"<CR>', 'Use j' },
   ['<Leader>'] = {
+    p = { '<CMD>NvimTreeOpen<CR>', 'Open Nvim Tree'},
     f = {
       name = '+find',
       f = { '<CMD>lua require("telescope.builtin").find_files({ hidden = true })<CR>', 'Find Files' },

@@ -2,7 +2,7 @@
 
 git clone git@github.com:katyanna/dotfiles.git ~/.dotfiles && cd ~/.dotfiles || exit
 
-packages=("stow" "tmux" "zplug" "the_silver_searcher" "zsh-autosuggestions" "zsh-syntax-highlighting" "gh" "neovim")
+packages=("stow" "tmux" "zplug" "the_silver_searcher" "zsh-autosuggestions" "zsh-syntax-highlighting" "gh" "neovim" "ripgrep")
 for package in "${packages[@]}"
 do
     brew install "$package"
