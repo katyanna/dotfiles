@@ -1,7 +1,7 @@
 [core]
   autocrlf = false
   editor = vim -f
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.config/git/.gitignore
 
 [user]
   name = Katyanna Moura
