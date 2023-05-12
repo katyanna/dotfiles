@@ -55,10 +55,8 @@ alias manage="python $VIRTUAL_ENV/../manage.py"
 
 
 ### Golang
-export GOPATH=$HOME/workspace
-export GOROOT=/usr/local/go
+export GOPATH=$HOME/workspace/go
 export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$GOROOT/bin
 
 
 ### Postgres
@@ -71,6 +69,9 @@ export PATH="/usr/local/bin/:$PATH:/Applications/Postgres.app/Contents/Versions/
 
 ### Aliases
 alias k=kubectl
+alias n=nvim
+alias nz="nvim ~/.zshrc"
+alias sz="source ~/.zshrc"
 alias tree="tree -a -I '__pycache__|.git'"
 
 source ~/.config-pvt/zshrc
