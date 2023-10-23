@@ -61,6 +61,7 @@
   st = status -sb
   co = checkout
   ss = stash
+  sh = show head
   l = log --graph --abbrev-commit --date=relative
   ll = log --graph --abbrev-commit --date=relative --name-status
   lp = log --graph --abbrev-commit --date=relative -p
