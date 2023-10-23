@@ -18,7 +18,7 @@ n_mappings = {
   ['<Up>'] = { '<CMD>echoe "Use k"<CR>', 'Use k' },
   ['<Down>'] = { '<CMD>echoe "Use j"<CR>', 'Use j' },
   ['<Leader>'] = {
-    p = { '<CMD>NvimTreeOpen<CR>', 'Open Nvim Tree'},
+    p = { '<CMD>NvimTreeToggle<CR>', 'Open Nvim Tree'},
     f = {
       name = '+find',
       f = { '<CMD>lua require("telescope.builtin").find_files({ hidden = true })<CR>', 'Find Files' },
