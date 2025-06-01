@@ -48,6 +48,15 @@ M.languages = {
     experimentalPostfixCompletions = true,
     gofumpt = true,
     staticcheck = true,
+    hints = {
+        assignVariableTypes = true,
+        compositeLiteralFields = true,
+        compositeLiteralTypes = true,
+        constantValues = true,
+        functionTypeParameters = true,
+        parameterNames = true,
+        rangeVariableTypes = true,
+    },
   },
   rust_analyzer = {
     assist = { importGranularity = "module", importPrefix = "by_self" },

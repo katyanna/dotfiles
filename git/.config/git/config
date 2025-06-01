@@ -58,6 +58,7 @@
   pretty = format:%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %C(reset)[%C(blue)%an%C(reset)]%C(bold magenta)%d%C(reset)
 
 [alias]
+  cmt = commit --signof
   st = status -sb
   co = checkout
   ss = stash
@@ -81,6 +82,3 @@
 
 [commit]
   verbose = true
-
-[include]
-  path = ~/.config-pvt/gitconfig

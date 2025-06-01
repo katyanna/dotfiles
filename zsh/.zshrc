@@ -69,9 +69,17 @@ export PATH="/usr/local/bin/:$PATH:/Applications/Postgres.app/Contents/Versions/
 
 ### Aliases
 alias k=kubectl
+alias zk=zkubectl
+alias zkc="zkubectl config current-context"
+alias zga="kubectl get po,svc,deploy,stackset,stack,replicaset,hpa,vpa,configmap,secret,pcs,routegroup,ingress"
 alias n=nvim
 alias nz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias tree="tree -a -I '__pycache__|.git'"
 
 source ~/.config-pvt/zshrc
+
+gocover () {
+    t="/tmp/go-cover.$$.tmp"
+    go test -coverprofile=$t $@ && go tool cover -html=$t && unlink $t
+}

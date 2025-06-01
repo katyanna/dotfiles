@@ -38,42 +38,42 @@ require('packer').startup({
 
         use { 'norcalli/nvim-colorizer.lua', config = function() require 'colorizer'.setup {} end }
 
-        use {
-            'nvim-lualine/lualine.nvim',
-            requires = { 'kyazdani42/nvim-web-devicons' },
-            event = 'BufWinEnter',
-            config = function()
-                require('lualine').setup {
-                    options = { theme = 'nord' },
-                    sections = {
-                        lualine_a = { 'mode' },
-                        lualine_b = { 'branch', 'diff' },
-                        lualine_c = {
-                            {
-                                'filename',
-                                path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
-                            },
-                        },
-                        lualine_x = {
-                            { 'diagnostics', symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' } },
-                            'encoding',
-                            'fileformat',
-                            'filetype',
-                        },
-                        lualine_y = { 'progress' },
-                        lualine_z = { 'location' },
-                    },
-                    tabline = {
-                        lualine_a = { { 'buffers' } },
-                        lualine_b = {},
-                        lualine_c = {},
-                        lualine_x = {},
-                        lualine_y = {},
-                        lualine_z = { 'tabs' },
-                    },
-                }
-            end,
-        }
+        -- use {
+        --     'nvim-lualine/lualine.nvim',
+        --     requires = { 'kyazdani42/nvim-web-devicons' },
+        --     event = 'BufWinEnter',
+        --     config = function()
+        --         require('lualine').setup {
+        --             options = { theme = 'nord' },
+        --             sections = {
+        --                 lualine_a = { 'mode' },
+        --                 lualine_b = { 'branch', 'diff' },
+        --                 lualine_c = {
+        --                     {
+        --                         'filename',
+        --                         path = 1, -- 0 = just filename, 1 = relative path, 2 = absolute path
+        --                     },
+        --                 },
+        --                 lualine_x = {
+        --                     { 'diagnostics', symbols = { error = ' ', warn = ' ', info = ' ', hint = ' ' } },
+        --                     'encoding',
+        --                     'fileformat',
+        --                     'filetype',
+        --                 },
+        --                 lualine_y = { 'progress' },
+        --                 lualine_z = { 'location' },
+        --             },
+        --             tabline = {
+        --                 lualine_a = { { 'buffers' } },
+        --                 lualine_b = {},
+        --                 lualine_c = {},
+        --                 lualine_x = {},
+        --                 lualine_y = {},
+        --                 lualine_z = { 'tabs' },
+        --             },
+        --         }
+        --     end,
+        -- }
 
         use {
             'andersevenrud/nordic.nvim',
@@ -189,7 +189,15 @@ require('packer').startup({
                     },
                 })
                 local settings = require('user.lsp_settings')
-                local on_attach = function(_, _)
+                local on_attach = function(client, bfrnr)
+                    -- FIX: Enable semanticTokensProvider only for supported servers
+                    if not client.server_capabilities.semanticTokensProvider then
+                        client.server_capabilities.semanticTokensProvider = nil
+                    end
+
+                    if client.server_capabilities.inlayHintProvider then
+                        vim.lsp.inlay_hint.enable(bfrnr, true)
+                    end
                     settings.setup()
 
                     -- Use LSP as the handler for omnifunc.
@@ -221,13 +229,6 @@ require('packer').startup({
             'rbjorklin/symbols-outline.nvim',
             branch = 'fix-outline-detection',
             config = function() require('symbols-outline').setup({ wrap = true }) end,
-        }
-
-        use {
-            'pwntester/octo.nvim',
-            requires = { 'nvim-lua/plenary.nvim', 'nvim-telescope/telescope.nvim', 'kyazdani42/nvim-web-devicons' },
-            cmd = 'Octo',
-            config = function() require "octo".setup() end,
         }
 
         use {
@@ -362,7 +363,7 @@ end
 
 vim.diagnostic.config({
     virtual_text = {
-        prefix = '●',    -- Could be '■', '▎', 'x'
+        prefix = '●', -- Could be '■', '▎', 'x'
         source = "always", -- Or "if_many"
     },
     float = {
