@@ -177,51 +177,226 @@ require('packer').startup({
             "williamboman/mason-lspconfig.nvim",
             after = "mason.nvim",
             config = function()
-                require("mason-lspconfig").setup({
-                    ensure_installed = {
-                        'lua_ls',
-                        'efm',
-                        'gopls',
-                        'pyright',
-                        'clangd',
-                        'texlab',
-                        'yamlls',
+                -- mason
+                local on_attach = function(client, bufnr)
+                -- FIX: Enable semanticTokensProvider only for supported servers
+                if not client.server_capabilities.semanticTokensProvider then
+                    client.server_capabilities.semanticTokensProvider = nil
+                end
+
+                -- if client.server_capabilities.inlayHintProvider then
+                if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+                    vim.lsp.inlay_hint.enable(true)
+                end
+                -- end
+                -- require("navigator.lspclient.mapping").setup({ client = client, bufnr = bufnr }) -- setup navigator keymaps here,
+                -- require("navigator.dochighlight").documentHighlight(bufnr)
+                -- require("navigator.codeAction").code_action_prompt(bufnr)
+                -- Use LSP as the handler for omnifunc.
+                --    See `:help omnifunc` and `:help ins-completion` for more information.
+                vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+                end
+
+                local function lsp_names(servers)
+                    local names = {}
+                    for _, server in pairs(servers) do
+                        names[#names + 1] = server.name
+                    end
+                    return names
+                end
+
+                local util = require("lspconfig.util")
+                local servers = {
+                    { name = "clangd", opts = { on_attach = on_attach } },
+                    { name = "dotls", opts = { on_attach = on_attach } },
+                    { name = "efm", opts = { on_attach = on_attach } },
+                    { name = "taplo", opts = { on_attach = on_attach } },
+                    { name = "terraformls", opts = { on_attach = on_attach } },
+                    { name = "texlab", opts = { on_attach = on_attach } },
+                    { name = "tflint", opts = { on_attach = on_attach } },
+                    { name = "zls", opts = { on_attach = on_attach } },
+                    {
+                    name = "lua_ls",
+                    opts = {
+                        on_attach = on_attach,
+                        on_init = function(client)
+                        if client.workspace_folders then
+                            local path = client.workspace_folders[1].name
+                            if vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc") then
+                            return
+                            end
+                        end
+
+                        client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
+                            runtime = {
+                            -- Tell the language server which version of Lua you're using
+                            -- (most likely LuaJIT in the case of Neovim)
+                            version = "LuaJIT",
+                            },
+                            -- Make the server aware of Neovim runtime files
+                            workspace = {
+                            checkThirdParty = false,
+                            library = {
+                                vim.env.VIMRUNTIME,
+                                -- Depending on the usage, you might want to add additional paths here.
+                                -- "${3rd}/luv/library"
+                                -- "${3rd}/busted/library",
+                            },
+                            -- or pull in all of 'runtimepath'. NOTE: this is a lot slower and will cause issues when working on your own configuration (see https://github.com/neovim/nvim-lspconfig/issues/3189)
+                            -- library = vim.api.nvim_get_runtime_file("", true)
+                            },
+                        })
+                        end,
+                        single_file_support = true,
+                        settings = {
+                        Lua = {
+                            hint = {
+                            enable = true,
+                            },
+                            diagnostics = { globals = { "vim" } },
+                        },
+                        },
+                    },
+                    },
+                    {
+                    name = "gopls",
+                    opts = {
+                        on_attach = on_attach,
+                        single_file_support = true,
+                        settings = {
+                        gopls = {
+                            analyses = { unusedparams = true, shadow = true },
+                            completeUnimported = true,
+                            experimentalPostfixCompletions = true,
+                            gofumpt = true,
+                            staticcheck = true,
+                            hints = {
+                            assignVariableTypes = true,
+                            compositeLiteralFields = true,
+                            compositeLiteralTypes = true,
+                            constantValues = true,
+                            functionTypeParameters = true,
+                            parameterNames = true,
+                            rangeVariableTypes = true,
+                            },
+                            codelenses = {
+                            gcDetails = true,
+                            generate = true,
+                            regenerateCgo = true,
+                            runGovulncheck = true,
+                            tidy = true,
+                            upgradeDependency = true,
+                            vendor = true,
+                            },
+                        },
+                        },
+                    },
+                    },
+                    {
+                    name = "pylsp",
+                    opts = {
+                        on_attach = on_attach,
+                        pylsp = {
+                        plugins = {
+                            pycodestyle = {
+                            maxLineLength = 100,
+                            },
+                            rope_completion = {
+                            enabled = true,
+                            },
+                            jedi_completion = {
+                            enabled = true,
+                            },
+                        },
+                        },
+                    },
+                    },
+                    {
+                    name = "marksman",
+                    opts = {
+                        filetypes = { "markdown", "quarto" },
+                    },
+                    root_dir = util.root_pattern(".git", ".marksman.toml", "_quarto.yml"),
+                    },
+                    {
+                    name = "rust_analyzer",
+                    opts = {
+                        on_attach = on_attach,
+                        settings = {
+                        ["rust-analyzer"] = {
+                            assist = { importGranularity = "module", importPrefix = "by_self" },
+                            cargo = { loadOutDirsFromCheck = true },
+                            checkOnSave = { command = "clippy" },
+                            completion = { autoimport = { enable = true } },
+                            procMacro = { enable = true },
+                        },
+                        },
+                    },
+                    },
+                    {
+                    name = "r_language_server",
+                    on_attach = on_attach,
+                    opts = {
+                        settings = {
+                        r = {
+                            lsp = {
+                            rich_documentation = false,
+                            },
+                        },
+                        },
+                    },
+                    },
+                    {
+                    name = "yamlls",
+                    opts = {
+                        on_attach = on_attach,
+                        settings = {
+                        yaml = {
+                            schemaStore = {
+                            enable = true,
+                            url = "",
+                            },
+                            schemas = {
+                            kubernetes = "**/templates/*.yaml",
+                            },
+                        },
+                        },
+                    },
+                    },
+                }
+                require("mason").setup()
+
+                local lspconfig = require("lspconfig")
+                lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+                    inlay_hints = {
+                    enabled = true,
+                    },
+                    codelens = {
+                    enabled = true,
+                    },
+                    document_highlight = {
+                    enabled = true,
+                    },
+                    capabilities = {
+                    workspace = {
+                        fileOperations = {
+                        didRename = true,
+                        willRename = true,
+                        },
+                    },
                     },
                 })
-                local settings = require('user.lsp_settings')
-                local on_attach = function(client, bfrnr)
-                    -- FIX: Enable semanticTokensProvider only for supported servers
-                    if not client.server_capabilities.semanticTokensProvider then
-                        client.server_capabilities.semanticTokensProvider = nil
-                    end
 
-                    if client.server_capabilities.inlayHintProvider then
-                        vim.lsp.inlay_hint.enable(bfrnr, true)
-                    end
-                    settings.setup()
-
-                    -- Use LSP as the handler for omnifunc.
-                    --    See `:help omnifunc` and `:help ins-completion` for more information.
-                    vim.api.nvim_buf_set_option(0, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-                end
-                require("mason-lspconfig").setup_handlers({
-                    -- The first entry (without a key) will be the default handler
-                    -- and will be called for each installed server that doesn't have
-                    -- a dedicated handler.
-                    function(server_name) -- default handler (optional)
-                        require("lspconfig")[server_name].setup({
-                            on_attach = on_attach,
-                            flags = { debounce_text_changes = 500, exit_timeout = 0 },
-                            single_file_support = true,
-                            settings = settings.languages,
-                        })
-                    end,
-                    -- Next, you can provide targeted overrides for specific servers.
-                    -- For example, a handler override for the `rust_analyzer`:
-                    -- ["rust_analyzer"] = function ()
-                    --     require("rust-tools").setup {}
-                    -- end
+                require("mason-lspconfig").setup({
+                    ensure_installed = lsp_names(servers),
                 })
+                -- After setting up mason-lspconfig you may set up servers via lspconfig
+                -- require("lspconfig").lua_ls.setup {}
+                -- require("lspconfig").rust_analyzer.setup {}
+                -- ...
+                for i, server in ipairs(servers) do
+                    require("lspconfig")[server.name].setup(server.opts)
+                end
             end,
         }
 
