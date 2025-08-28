@@ -7,6 +7,8 @@ and not set -q TMUX # https://github.com/fish-shell/fish-shell/issues/4434#issue
     tmux new-session -A -s km
 end
 
+starship init fish | source
+
 set -gx LANG en_US.UTF-8
 set -gx LC_CTYPE en_US.UTF-8
 set -gx LC_ALL en_US.UTF-8
