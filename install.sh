@@ -5,7 +5,7 @@ echo '\n### Clone dotfiles configurations'
 git clone git@github.com:katyanna/dotfiles.git ~/.dotfiles && cd ~/.dotfiles || exit
 
 echo '\n### Install packages'
-packages=("stow" "tmux" "fish" "fzf" "starship" "gh" "neovim" "ripgrep")
+packages=("stow" "tmux" "fish" "fzf" "starship" "gh" "neovim" "ripgrep" "tree")
 for package in "${packages[@]}"
 do
     brew install "$package"

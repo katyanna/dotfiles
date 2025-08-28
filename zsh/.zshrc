@@ -21,11 +21,6 @@ source ~/.zsh/history.zsh
 export ZPLUG_HOME=/opt/homebrew/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug "zsh-users/zsh-history-substring-search"
-zplug "zsh-users/zsh-syntax-highlighting"
-zplug "zsh-users/zsh-autosuggestions"
-zplug load
-
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -71,15 +66,21 @@ export PATH="/usr/local/bin/:$PATH:/Applications/Postgres.app/Contents/Versions/
 alias k=kubectl
 alias zk=zkubectl
 alias zkc="zkubectl config current-context"
-alias zga="kubectl get po,svc,deploy,stackset,stack,replicaset,hpa,vpa,configmap,secret,pcs,routegroup,ingress"
+alias zga="kubectl get po,svc,deploy,stackset,stack,replicaset,hpa,vpa,configmap,secret,pcs,routegroup,ingress,serviceaccount,clusterrole,role"
 alias n=nvim
 alias nz="nvim ~/.zshrc"
 alias sz="source ~/.zshrc"
 alias tree="tree -a -I '__pycache__|.git'"
 
-source ~/.config-pvt/zshrc
-
 gocover () {
     t="/tmp/go-cover.$$.tmp"
     go test -coverprofile=$t $@ && go tool cover -html=$t && unlink $t
 }
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+# zplug "zsh-users/zsh-history-substring-search"
+# zplug "zsh-users/zsh-syntax-highlighting"
+# zplug "zsh-users/zsh-autosuggestions"
+# zplug load
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $(brew --prefix)/share/zsh-history-substring-search/zsh-history-substring-search.zsh

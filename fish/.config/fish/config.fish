@@ -42,6 +42,7 @@ fzf --fish | source
 alias nf="nvim ~/.config/fish/config.fish"
 alias sf="source ~/.config/fish/config.fish"
 alias tree="tree -a -I '__pycache__|.git'"
+alias zga="kubectl get po,svc,deploy,stackset,stack,replicaset,hpa,vpa,configmap,secret,pcs,routegroup,ingress,serviceaccount,clusterrole,role"
 
 abbr n nvim
 abbr k kubectl
