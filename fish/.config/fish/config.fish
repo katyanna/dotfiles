@@ -22,7 +22,6 @@ set -gx GOPATH $HOME/Workspace/go
 fish_add_path $GOPATH/bin
 fish_add_path /opt/local/bin
 
-set fish_theme nord
 set -gx FZF_DEFAULT_OPTS "
      --height 40%
      --style full
@@ -35,6 +34,19 @@ set -gx FZF_DEFAULT_OPTS "
      --color=marker:#a3be8b,spinner:#b48dac,header:#a3be8b"
 
 fzf --fish | source
+
+### Python
+alias manage="python $VIRTUAL_ENV/../manage.py"
+
+### Golang
+set -gx GOPATH $HOME/workspace/go
+set -gx PATH $PATH:$GOPATH/bin
+
+set -gx WORKON_HOME ~/.ve
+set -gx PROJECT_HOME ~/workspace
+
+### Postgres
+set -gx PATH "/usr/local/bin/:$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
 
 ###############################################################################
 ###                              ALIASES                                    ###
