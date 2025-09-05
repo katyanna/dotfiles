@@ -25,7 +25,6 @@ fish_add_path /opt/local/bin
 set -gx FZF_DEFAULT_OPTS "
      --height 40%
      --style full
-     --preview 'fzf-preview.sh {}'
      --layout=reverse
      --inline-info
      --color=fg:#e5e9f0,hl:#81a1c1
@@ -48,16 +47,21 @@ set -gx PROJECT_HOME ~/workspace
 ### Postgres
 set -gx PATH "/usr/local/bin/:$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
 
+# zalando config
+set -gx GOPRIVATE "github.bus.zalan.do,github.com/zalando-*,github-zse/zalando-*"
+
 ###############################################################################
 ###                              ALIASES                                    ###
 ###############################################################################
 alias nf="nvim ~/.config/fish/config.fish"
 alias sf="source ~/.config/fish/config.fish"
 alias tree="tree -a -I '__pycache__|.git'"
-alias zga="kubectl get po,svc,deploy,stackset,stack,replicaset,hpa,vpa,configmap,secret,pcs,routegroup,ingress,serviceaccount,clusterrole,role"
+alias zga="kubectl get po,svc,deploy,statefulset,stackset,stack,replicaset,hpa,vpa,configmap,secret,pcs,routegroup,ingress,serviceaccount,clusterrole,role"
 
 abbr n nvim
 abbr k kubectl
+abbr zk zkubectl
+abbr fzfp "fzf --preview 'fzf-preview.sh {}'"
 
 ###############################################################################
 ###                              ERGONOMICS                                 ###
