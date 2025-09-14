@@ -270,16 +270,19 @@ require('packer').startup({
                         name = "pylsp",
                         opts = {
                             on_attach = on_attach,
-                            pylsp = {
-                                plugins = {
-                                    pycodestyle = {
-                                        maxLineLength = 100,
-                                    },
-                                    rope_completion = {
-                                        enabled = true,
-                                    },
-                                    jedi_completion = {
-                                        enabled = true,
+                            settings = {
+                                pylsp = {
+                                    plugins = {
+                                        pycodestyle = {
+                                            enabled = true,
+                                            maxLineLength = 100,
+                                        },
+                                        rope_completion = {
+                                            enabled = true,
+                                        },
+                                        jedi_completion = {
+                                            enabled = true,
+                                        },
                                     },
                                 },
                             },
@@ -350,6 +353,7 @@ require('packer').startup({
 
                 require("mason-lspconfig").setup({
                     ensure_installed = lsp_names(servers),
+                    automatic_enable = false,
                 })
                 -- After setting up mason-lspconfig you may set up servers via lspconfig
                 -- require("lspconfig").lua_ls.setup {}
