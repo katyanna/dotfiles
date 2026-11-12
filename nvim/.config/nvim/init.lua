@@ -103,21 +103,31 @@ require('packer').startup({
 
     use {
       'nvim-treesitter/nvim-treesitter',
-      requires = 'nvim-treesitter/playground',
-      run = ':TSUpdate',
+      branch = 'main',        -- 'main' is required for Neovim 0.12; 'master' is archived and crashes (node:range nil)
+      run = function() require('nvim-treesitter').update() end,   -- ':TSUpdate' was removed on 'main'
       config = function()
-        require('nvim-treesitter.configs').setup {
-          ensure_installed = 'all',           -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-          ignore_install = {},                -- List of parsers to ignore installing
-          highlight = {
-            enable = true,                    -- false will disable the whole extension
-            -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-            -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-            -- Using this option may slow down your editor, and you may see some duplicate highlights.
-            -- Instead of true it can also be a list of languages
-            additional_vim_regex_highlighting = false,
-          },
+        -- 'main' branch removed require('nvim-treesitter.configs').setup(). New API:
+        local ts = require('nvim-treesitter')
+        ts.setup {
+          install_dir = vim.fn.stdpath('data') .. '/site',
         }
+        -- install the parsers we need (requires the tree-sitter CLI: brew install tree-sitter)
+        ts.install { 'markdown', 'markdown_inline', 'lua', 'vim', 'vimdoc', 'query' }
+
+        -- enable treesitter highlighting for any buffer that has a parser
+        vim.api.nvim_create_autocmd('FileType', {
+          callback = function(args)
+            pcall(vim.treesitter.start, args.buf)   -- no-op when no parser for this filetype
+          end,
+        })
+      end,
+    }
+    use {
+      'MeanderingProgrammer/render-markdown.nvim',
+      after = 'nvim-treesitter',
+      config = function()
+        local ok, rm = pcall(require, 'render-markdown')
+        if ok then rm.setup({}) end
       end,
     }
 
@@ -205,21 +215,13 @@ require('packer').startup({
 
                 client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
                   runtime = {
-                    -- Tell the language server which version of Lua you're using
-                    -- (most likely LuaJIT in the case of Neovim)
                     version = "LuaJIT",
                   },
-                  -- Make the server aware of Neovim runtime files
                   workspace = {
                     checkThirdParty = false,
                     library = {
                       vim.env.VIMRUNTIME,
-                      -- Depending on the usage, you might want to add additional paths here.
-                      -- "${3rd}/luv/library"
-                      -- "${3rd}/busted/library",
                     },
-                    -- or pull in all of 'runtimepath'. NOTE: this is a lot slower and will cause issues when working on your own configuration (see https://github.com/neovim/nvim-lspconfig/issues/3189)
-                    -- library = vim.api.nvim_get_runtime_file("", true)
                   },
                 })
               end,
@@ -247,13 +249,13 @@ require('packer').startup({
                   gofumpt = true,
                   staticcheck = true,
                   hints = {
-                    assignVariableTypes = true,
-                    compositeLiteralFields = true,
-                    compositeLiteralTypes = true,
-                    constantValues = true,
-                    functionTypeParameters = true,
-                    parameterNames = true,
-                    rangeVariableTypes = true,
+                    assignVariableTypes = false,
+                    compositeLiteralFields = false,
+                    compositeLiteralTypes = false,
+                    constantValues = false,
+                    functionTypeParameters = false,
+                    parameterNames = false,
+                    rangeVariableTypes = false,
                   },
                   codelenses = {
                     gcDetails = true,
@@ -293,9 +295,10 @@ require('packer').startup({
           {
             name = "marksman",
             opts = {
+              on_attach = on_attach,
               filetypes = { "markdown", "quarto" },
+              root_dir = util.root_pattern(".git", ".marksman.toml", "_quarto.yml"),
             },
-            root_dir = util.root_pattern(".git", ".marksman.toml", "_quarto.yml"),
           },
           {
             name = "rust_analyzer",
@@ -312,28 +315,31 @@ require('packer').startup({
               },
             },
           },
-          {
-            name = "yamlls",
-            opts = {
-              on_attach = on_attach,
-              settings = {
-                yaml = {
-                  schemaStore = {
-                    enable = true,
-                    url = "",
-                  },
-                  schemas = {
-                    kubernetes = "**/templates/*.yaml",
-                  },
-                },
-              },
-            },
-          },
+          -- {
+          --   name = "yamlls",
+          --   opts = {
+          --     on_attach = on_attach,
+          --     settings = {
+          --       yaml = {
+          --         format = {
+          --           enable = false,
+          --         },
+          --         schemaStore = {
+          --           enable = true,
+          --           url = "",
+          --         },
+          --         schemas = {
+          --           kubernetes = "**/templates/*.yaml",
+          --         },
+          --       },
+          --     },
+          --   },
+          -- },
         }
         require("mason").setup()
 
-        local lspconfig = require("lspconfig")
-        lspconfig.util.default_config = vim.tbl_extend("force", lspconfig.util.default_config, {
+        -- Global defaults applied to every server (merged with each server's opts)
+        vim.lsp.config("*", {
           inlay_hints = {
             enabled = true,
           },
@@ -358,11 +364,14 @@ require('packer').startup({
           automatic_enable = false,
         })
         -- After setting up mason-lspconfig you may set up servers via lspconfig
-        -- require("lspconfig").lua_ls.setup {}
-        -- require("lspconfig").rust_analyzer.setup {}
+        -- vim.lsp.config("lua_ls", {})
+        -- vim.lsp.enable("lua_ls")
         -- ...
         for i, server in ipairs(servers) do
-          require("lspconfig")[server.name].setup(server.opts)
+          if server.opts and next(server.opts) ~= nil then
+            vim.lsp.config(server.name, server.opts)
+          end
+          vim.lsp.enable(server.name)
         end
       end,
     }
@@ -407,7 +416,7 @@ require('packer').startup({
             virt_text_pos = 'eol',             -- 'eol' | 'overlay' | 'right_align'
             delay = 1000,
           },
-          current_line_blame_formatter_opts = { relative_time = false },
+          -- current_line_blame_formatter_opts = { relative_time = false },
         }
       end,
     }
