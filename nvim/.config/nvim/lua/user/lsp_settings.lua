@@ -65,7 +65,7 @@ M.languages = {
     completion = { autoimport = { enable = true } },
     procMacro = { enable = true },
   },
-  yaml = { schemas = { kubernetes = '**/templates/*.yaml' } },
+  -- yaml = { schemas = { kubernetes = '**/templates/*.yaml' } },
   Lua = { diagnostics = { globals = { 'vim' } } },
 }
 
