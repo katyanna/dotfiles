@@ -56,7 +56,8 @@ set -gx GOPRIVATE "github.bus.zalan.do,github.com/zalando-*,github-zse/zalando-*
 alias nf="nvim ~/.config/fish/config.fish"
 alias sf="source ~/.config/fish/config.fish"
 alias tree="tree -a -I '__pycache__|.git'"
-alias zga="kubectl get po,svc,deploy,statefulset,stackset,stack,replicaset,hpa,vpa,configmap,secret,pcs,routegroup,ingress,serviceaccount,clusterrole,role"
+alias zga="kubectl get po,svc,serviceaccount,deploy,stackset,stack,replicaset,statefulset,cj,job,hpa,vpa,configmap,secret,pcs,routegroup,ingress,clusterrole,role"
+alias zcurl='curl -s -H "Authorization: Bearer $(ztoken)"'
 
 abbr n nvim
 abbr k kubectl
@@ -77,3 +78,13 @@ function system_update
   nvim -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
   . ~/.config/fish/config.fish
 end
+
+# Created by `pipx` on 2025-08-28 21:21:04
+set PATH $PATH /Users/katyanna.moura/.local/bin
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH
+
+# nebius
+set --export PATH /Users/katyanna.moura/.nebius/bin $PATH
